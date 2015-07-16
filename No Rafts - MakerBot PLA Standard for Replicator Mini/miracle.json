@@ -39,7 +39,7 @@
    "doMixedSupport" : true,
    "doPrintProgress" : true,
    "doPurgeWall" : false,
-   "doRaft" : true,
+   "doRaft" : false,
    "doSplitLongMoves" : true,
    "doSupport" : false,
    "doSupportUnderBridges" : false,
