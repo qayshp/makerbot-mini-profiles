@@ -2,9 +2,9 @@
     "comment" : [
      "This is a custom profile for MakerBot Slicer. Editing it will modify your",
       "slice settings. For documentation on MakerBot Slicer parameters, see here:",
-      "http://www.makerbot.com/support/makerware/documentation/slicer"
+      "https://www.makerbot.com/support/new/Desktop/03_Using_Custom_Slicing_Profiles"
     ],
-    "version":"3.0.0",
+    "version":"3.5.0",
 
     "layerHeightMinimum": 0.12,
     "layerHeightMaximum": 0.27,
@@ -43,6 +43,7 @@
     "platformTemp": 0,
 
     "numberOfShells": 2,
+    "shellsLeakyConnections": true,
     "infillShellSpacingMultiplier": 0.7,
     "insetDistanceMultiplier": 1.0,
 
@@ -150,9 +151,19 @@
 
     "commentClose": "",
     "commentOpen": ";",
+    "doFlickHop": false,
+    "flickSpeed": 20,
+    "adjacentFillLeakyConnections": true,
+    "adjacentFillLeakyDistanceRatio": 1.4,
+    "leakyConnectionsAdjacentDistance" : 0.1,
+    "flickMinDistance" : 0.4,
+    "doExponentialDeceleration" : true,
+    "exponentialDecelerationSegmentCount": 10, 
+    "exponentialDecelerationRatio": 0.375,
+    "preOozeFeedstockDistance": 0.1,
 
     "extruderProfiles": [
-        {
+       {
             "bridgesExtrusionProfile": "bridges",
             "feedDiameter": 1.77,
             "feedstockMultiplier": 1.0,
@@ -163,18 +174,22 @@
             "nozzleDiameter": 0.4,
             "outlinesExtrusionProfile": "outlines",
             "raftBaseExtrusionProfile": "raftbase",
-            "restartExtraDistance": 0,
+            "raftExtrusionProfile": "raft",
             "retractDistance": 1.0,
-            "retractRate": 10,
-            "retractDistance2": 1.0,
+            "retractRate": 50,
+            "retractDistance2": 0,
             "retractRate2": 50,
-	    "restartRate": 50,
+            "restartRate": 30,            
+            "oozeFeedstockDistance": 0.1,
+            "restartExtraDistance": 0.1,
+            "restartExtraRate": 30.0,
             "toolchangeRetractDistance" : 19.0,
             "toolchangeRetractRate" : 6.0,
             "toolchangeRestartDistance" : 18.5,
+            "preOozeFeedstockDistance": 0.1,
             "toolchangeRestartRate" : 6.0
         },
-        {
+       {
             "bridgesExtrusionProfile": "bridges",
             "feedDiameter": 1.77,
             "feedstockMultiplier": 1.0,
@@ -185,18 +200,23 @@
             "nozzleDiameter": 0.4,
             "outlinesExtrusionProfile": "outlines",
             "raftBaseExtrusionProfile": "raftbase",
-            "restartExtraDistance": 0,
+            "raftExtrusionProfile": "raft",
             "retractDistance": 1.0,
-            "retractRate": 10,
-            "retractDistance2": 1.0,
+            "retractRate": 50,
+            "retractDistance2": 0,
             "retractRate2": 50,
-	    "restartRate": 50,
+            "restartRate": 30,            
+            "oozeFeedstockDistance": 0.1,
+            "restartExtraDistance": 0.1,
+            "restartExtraRate": 30.0,
             "toolchangeRetractDistance" : 19.0,
             "toolchangeRetractRate" : 6.0,
             "toolchangeRestartDistance" : 18.5,
+            "preOozeFeedstockDistance": 0.1,
             "toolchangeRestartRate" : 6.0
         }
     ],
+
     "extrusionProfiles": {
         "bridges": {
             "feedrate": 40,
@@ -224,6 +244,10 @@
         },
         "raftbase": {
             "feedrate": 10,
+            "temperature_disabled": 230.0
+        },
+        "raft": {
+            "feedrate": 90,
             "temperature_disabled": 230.0
         }
     }
